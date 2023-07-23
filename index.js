@@ -5,8 +5,6 @@ import flash from 'connect-flash'
 import session from 'express-session'
 import varMiddleware from './midleware/var.js'
 import cookieParser from 'cookie-parser'
-import fs from 'fs'
-import path from 'path'
 import * as dotenv from 'dotenv'
 // ROUTES
 import AuthRoutes from './routes/auth.js'
@@ -20,8 +18,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(express.static('public'))
 app.use(cookieParser())
-app.use(session({secret:'1234', resave: false, saveUninitialized: false}))
-app.use(flash())
+ app.use(flash())
 app.use(varMiddleware)
 
 const hbs = create({defaultLayout: 'main', extname: 'hbs'})

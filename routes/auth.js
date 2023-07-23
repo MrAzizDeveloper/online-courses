@@ -25,7 +25,7 @@ router.get('/register', (req,res)=>{
   }
   res.render('register',{
     title:'Register',
-    registerError:req.flash('registerError'),
+    registerError:req.flash('registerError'), 
 
   })
   
